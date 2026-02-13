@@ -60,7 +60,15 @@ async def trigger_zk_predator(request: TriggerRequest):
                 "status": "Scanning Market..."
             })
             
+
             result = await bull_agent.analyze(market_data, signals=[])
+            
+            # Broadcast BITE transaction if encryption occurred
+            if result.get("action") == "PROPOSE_ENCRYPTED_EXECUTION" and "bite_tx" in result:
+                await connection_manager.broadcast_status({
+                    "type": "bite_encrypted",
+                    "data": result["bite_tx"]
+                })
             
             await connection_manager.broadcast_status({
                 "type": "agent_status",
