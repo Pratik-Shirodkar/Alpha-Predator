@@ -16,6 +16,16 @@ async def trigger_zk_predator(request: TriggerRequest):
     """
     Trigger the ZK Alpha Predator Workflow.
     """
+    import traceback
+    try:
+        return await _run_trigger(request)
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).error(f"Trigger failed: {traceback.format_exc()}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+async def _run_trigger(request: TriggerRequest):
     # 1. Mock Market Data (In a real app, this would come from a service)
     market_data = MarketData(
         symbol=request.symbol,
