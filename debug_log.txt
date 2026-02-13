@@ -1,0 +1,9 @@
+Name: 80ad6561-cf27-409f-b6f6-9e305a9bbf53
+Secret: 8E23Up9aa3...
+CDP Client imported.
+CDP Client initialized.
+Listing EVM Accounts...
+Accounts found: 0
+ERROR:asyncio:Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001DACC32FB90>, 197861.468)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001DACC397CB0>

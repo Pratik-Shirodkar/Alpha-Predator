@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\prati\IdeaProjects\Consensus AI\ZeroKnowledgeAlphaPredator\backend\main.py", line 15, in <module>
+    from api.routes import router
+  File "C:\Users\prati\IdeaProjects\Consensus AI\ZeroKnowledgeAlphaPredator\backend\api\routes.py", line 8, in <module>
+    from agents.debate_engine import debate_engine
+  File "C:\Users\prati\IdeaProjects\Consensus AI\ZeroKnowledgeAlphaPredator\backend\agents\__init__.py", line 5, in <module>
+    from .debate_engine import debate_engine, DebateEngine
+  File "C:\Users\prati\IdeaProjects\Consensus AI\ZeroKnowledgeAlphaPredator\backend\agents\debate_engine.py", line 8, in <module>
+    from data.market_data import market_data_service
+  File "C:\Users\prati\IdeaProjects\Consensus AI\ZeroKnowledgeAlphaPredator\backend\data\market_data.py", line 222, in <module>
+    market_data_service = MarketDataService()
+                          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prati\IdeaProjects\Consensus AI\ZeroKnowledgeAlphaPredator\backend\data\market_data.py", line 101, in __init__
+    print(f"\U0001f4ca MarketDataService initialized - Using {'MOCK' if self._use_mock else 'REAL WEEX'} data")
+  File "C:\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>

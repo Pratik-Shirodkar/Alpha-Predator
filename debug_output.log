@@ -1,0 +1,18 @@
+Name: 80ad6561-cf27-409f-b6f6-9e305a9bbf53
+CDP Client imported.
+CDP Client initialized.
+Local Owner Address: 0x337D8e996bF75C48035eFD6A3d58DB4c0142B2e4
+Getting/Creating Smart Wallet with name: SmartWallet-0x337D8e...
+SUCCESS: Smart Wallet Address: 0xAb08BE0bB982CFB04B6521164A7Ed801dfA01020
+Checking balance...
+----------------------------------------
+ERROR: AttributeError: 'EvmSmartAccount' object has no attribute 'balance'
+Traceback (most recent call last):
+  File "C:\Users\prati\IdeaProjects\Consensus AI\ZeroKnowledgeAlphaPredator\debug_cdp_init.py", line 61, in main
+    balance = await wallet.balance("eth")
+                    ^^^^^^^^^^^^^^
+  File "C:\Users\prati\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'EvmSmartAccount' object has no attribute 'balance'
+
+----------------------------------------

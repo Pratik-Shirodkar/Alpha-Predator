@@ -1,0 +1,96 @@
+{
+  "total_spend": "3.30",
+  "purchases": [
+    {
+      "timestamp": "2026-02-13T13:54:52.660820",
+      "tool": "Analyst: technical",
+      "amount": 0.1,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Integration Test Justification"
+    },
+    {
+      "timestamp": "2026-02-13T16:02:24.287440",
+      "tool": "Analyst: onchain",
+      "amount": 0.5,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T16:02:24.288980",
+      "tool": "Analyst: sentiment",
+      "amount": 0.2,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T16:02:24.292570",
+      "tool": "Analyst: technical",
+      "amount": 0.1,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T16:04:13.906675",
+      "tool": "Analyst: technical",
+      "amount": 0.1,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T16:04:13.909919",
+      "tool": "Analyst: sentiment",
+      "amount": 0.2,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T16:04:13.914335",
+      "tool": "Analyst: onchain",
+      "amount": 0.5,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T20:43:03.785787",
+      "tool": "Analyst: technical",
+      "amount": 0.1,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T20:43:03.791672",
+      "tool": "Analyst: onchain",
+      "amount": 0.5,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T20:43:03.798432",
+      "tool": "Analyst: sentiment",
+      "amount": 0.2,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T20:45:19.109835",
+      "tool": "Analyst: technical",
+      "amount": 0.1,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T20:45:19.114423",
+      "tool": "Analyst: onchain",
+      "amount": 0.5,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    },
+    {
+      "timestamp": "2026-02-13T20:45:19.119971",
+      "tool": "Analyst: sentiment",
+      "amount": 0.2,
+      "tx_hash": "0xMockTxHash",
+      "justification": "Building Consensus for BITE Execution"
+    }
+  ]
+}
