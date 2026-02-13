@@ -1,0 +1,32 @@
+# Environment files with secrets
+backend/.env
+backend/.env.local
+frontend/.env.local
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Wallet secrets
+wallet_seed.json
+backend/wallet_seed.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+backend/*.log
