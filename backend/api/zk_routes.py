@@ -100,10 +100,11 @@ async def get_audit_trail():
 async def get_wallet_status():
     """Return current wallet status."""
     from execution.payment_manager import payment_manager
+
     return {
         "address": payment_manager.get_address(),
         "balance": float(await payment_manager.get_balance()),
-        "mock_mode": payment_manager.mock_mode
+        "mock_mode": payment_manager.mode == "mock"
     }
 
 @router.get("/status")
