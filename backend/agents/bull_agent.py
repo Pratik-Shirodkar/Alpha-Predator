@@ -79,7 +79,7 @@ We will use paid analysts to confirm.
                 condition = "CONFIDENCE > 0.8" # The network will only decrypt if confidence remains high
                 
                 # --- ENCRYPTION (BITE) ---
-                bite_tx = bite_manager.encrypt_intent(intent, condition)
+                bite_tx = await bite_manager.encrypt_intent(intent, condition)
                 
                 result["action"] = "PROPOSE_ENCRYPTED_EXECUTION"
                 result["bite_tx"] = bite_tx
