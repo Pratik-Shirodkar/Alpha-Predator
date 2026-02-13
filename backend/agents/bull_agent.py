@@ -37,8 +37,13 @@ Based on this data, analyze whether there's a potential opportunity.
 If you see even a glimmer of hope, return CONFIDENCE 0.5 (Neutral).
 We will use paid analysts to confirm.
 """
-        response = await self._call_llm(prompt)
-        result = self._extract_json(response) or {"confidence": 0.5, "action": "HOLD"}
+        try:
+            response = await self._call_llm(prompt)
+            result = self._extract_json(response) or {"confidence": 0.5, "action": "HOLD"}
+        except Exception as e:
+            logger.warning(f"LLM call failed ({e}). Defaulting to analyst network check.")
+            response = "LLM unavailable — proceeding with analyst network verification."
+            result = {"confidence": 0.5, "action": "HOLD", "reasoning": str(e)}
         
         # 2. Paid Research & Consensus
         # If we are interested (confidence > 0.4), we pay for the "Analyst Network"

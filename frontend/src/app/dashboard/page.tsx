@@ -80,8 +80,11 @@ function Sparkline({ data, color }: { data: number[]; color: string }) {
   );
 }
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+const WS_URL = BACKEND_URL.replace(/^http/, 'ws') + '/ws/debate';
+
 export default function Dashboard() {
-  const { status: wsStatus, messages } = useWebSocket('ws://localhost:8000/ws/debate');
+  const { status: wsStatus, messages } = useWebSocket(WS_URL);
   const [agentState, setAgentState] = useState('IDLE');
   const [wallet, setWallet] = useState({ address: '0xMockAddress123456789', balance: 100.00 });
   const [analysts, setAnalysts] = useState<Record<string, AnalystState>>({
@@ -123,7 +126,7 @@ export default function Dashboard() {
 
   // Fetch wallet on mount
   useEffect(() => {
-    fetch('http://localhost:8000/api/zk/wallet')
+    fetch(`${BACKEND_URL}/api/zk/wallet`)
       .then(r => r.json())
       .then(d => setWallet({ address: d.address, balance: d.balance }))
       .catch(() => { });
@@ -194,7 +197,7 @@ export default function Dashboard() {
   };
 
   const fetchAudit = () => {
-    fetch('http://localhost:8000/api/zk/audit')
+    fetch(`${BACKEND_URL}/api/zk/audit`)
       .then(r => r.json())
       .then(d => {
         setAuditTrail(d.purchases || []);
@@ -214,10 +217,10 @@ export default function Dashboard() {
     setTraceSteps(prev => prev.map(s => ({ ...s, status: 'pending' as const, time: '' })));
     updateTrace(0, 'active', 'Scanning BTC/USDT...', new Date().toLocaleTimeString());
     try {
-      await fetch('http://localhost:8000/api/zk/trigger', {
+      await fetch(`${BACKEND_URL}/api/zk/trigger`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ force_demo: true }),
+        body: JSON.stringify({ symbol: 'BTC/USDT' }),
       });
     } catch (e) {
       setAgentState('❌ Error - Backend Offline');
