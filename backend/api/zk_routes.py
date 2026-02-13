@@ -97,3 +97,15 @@ async def get_wallet_status():
         "balance": float(await payment_manager.get_balance()),
         "mock_mode": payment_manager.mock_mode
     }
+
+@router.get("/status")
+async def get_agent_status():
+    """Return agent status and integration health."""
+    from agents.virtuals_agent import virtuals_agent
+    return {
+        "agent": "ZK Alpha Predator",
+        "status": "online",
+        "virtuals_integration": bool(virtuals_agent.api_key),
+        "mode": "production" if virtuals_agent.api_key else "demo",
+        "capabilities": virtuals_agent.capabilities()
+    }
